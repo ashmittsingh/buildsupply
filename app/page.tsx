@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from "next";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Button from "@/components/Button";
@@ -8,6 +7,17 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { products } from "@/data/products";
 import { blogPosts } from "@/data/blogs";
+
+export const metadata: Metadata = {
+  title: "BuildSupply - Premium Construction Materials & Coverage Calculator",
+  description: "Industry-leading construction materials including adhesives, waterproofing solutions, grouts, and decorative finishes. Try our advanced formula-based coverage calculator.",
+  keywords: "construction materials, tile adhesive, grout, waterproofing, coverage calculator, construction supplies",
+  openGraph: {
+    title: "BuildSupply - Premium Construction Materials & Coverage Calculator",
+    description: "Industry-leading construction materials including adhesives, waterproofing solutions, and coverage calculator for professionals.",
+    type: "website",
+  },
+};
 
 export default function Home() {
   const featuredProducts = products.slice(0, 3);
