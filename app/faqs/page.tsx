@@ -80,11 +80,12 @@ export default function FAQs() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
               >
-                <Card
-                  className="cursor-pointer transition-shadow duration-200 hover:shadow-md"
+                <button
                   onClick={() => toggleExpanded(faq.id)}
+                  className="w-full text-left"
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <Card className="cursor-pointer transition-shadow duration-200 hover:shadow-md">
+                    <div className="flex items-start justify-between gap-4">
                     <h3 className="flex-1 text-lg font-semibold text-gray-900">
                       {faq.question}
                     </h3>
@@ -113,7 +114,8 @@ export default function FAQs() {
                       </span>
                     </div>
                   </motion.div>
-                </Card>
+                  </Card>
+                </button>
               </motion.div>
             ))}
           </div>
