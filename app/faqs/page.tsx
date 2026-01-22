@@ -46,10 +46,10 @@ export default function FAQsPage() {
           className="text-center max-w-4xl mx-auto"
         >
           <HelpCircle className="w-16 h-16 text-[#B8A06A] mx-auto mb-8" strokeWidth={1.5} />
-          <h1 className="font-heading text-6xl lg:text-8xl font-bold text-[#333333] mb-8">
+          <h1 className="font-heading text-6xl lg:text-8xl font-bold text-[#333333] mb-8" style={{ fontFamily: 'cormorantgaramond', fontSize: '3.75rem', lineHeight: '1.1', letterSpacing: '0.001em', fontWeight: 700 }}>
             Frequently Asked Questions
           </h1>
-          <p className="font-paragraph text-lg lg:text-xl text-[#333333]/80 leading-relaxed">
+          <p className="font-paragraph text-lg lg:text-xl text-[#333333]/80 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
             Find answers to common questions about our products and services
           </p>
         </motion.div>
@@ -92,7 +92,7 @@ export default function FAQsPage() {
                 {/* Featured FAQs */}
                 {featuredFAQs.length > 0 && (
                   <div>
-                    <h2 className="font-heading text-3xl font-bold text-[#333333] mb-8">
+                    <h2 className="font-heading text-3xl font-bold text-[#333333] mb-8" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.875rem', lineHeight: '2', letterSpacing: '0.005em', fontWeight: 700 }}>
                       Popular Questions
                     </h2>
                     <Accordion type="single" collapsible className="space-y-4">
@@ -102,10 +102,10 @@ export default function FAQsPage() {
                           value={faq._id}
                           className="bg-[#FFFFFF] border border-[#B8A06A] rounded-sm px-8 py-2"
                         >
-                          <AccordionTrigger className="font-paragraph text-lg text-[#333333] hover:text-[#B8A06A] text-left">
+                          <AccordionTrigger className="font-paragraph text-lg text-[#333333] hover:text-[#B8A06A] text-left" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                             {faq.question}
                           </AccordionTrigger>
-                          <AccordionContent className="font-paragraph text-base text-[#333333]/80 leading-relaxed pt-4">
+                          <AccordionContent className="font-paragraph text-base text-[#333333]/80 leading-relaxed pt-4" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                             {faq.answer}
                           </AccordionContent>
                         </AccordionItem>
@@ -118,7 +118,7 @@ export default function FAQsPage() {
                 {regularFAQs.length > 0 && (
                   <div>
                     {featuredFAQs.length > 0 && (
-                      <h2 className="font-heading text-3xl font-bold text-[#333333] mb-8">
+                      <h2 className="font-heading text-3xl font-bold text-[#333333] mb-8" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.875rem', lineHeight: '2', letterSpacing: '0.005em', fontWeight: 700 }}>
                         More Questions
                       </h2>
                     )}
@@ -129,10 +129,10 @@ export default function FAQsPage() {
                           value={faq._id}
                           className="bg-[#FFFFFF] border border-[#E0E0E0] rounded-sm px-8 py-2 hover:border-[#B8A06A] transition-colors duration-300"
                         >
-                          <AccordionTrigger className="font-paragraph text-lg text-[#333333] hover:text-[#B8A06A] text-left">
+                          <AccordionTrigger className="font-paragraph text-lg text-[#333333] hover:text-[#B8A06A] text-left" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                             {faq.question}
                           </AccordionTrigger>
-                          <AccordionContent className="font-paragraph text-base text-[#333333]/80 leading-relaxed pt-4">
+                          <AccordionContent className="font-paragraph text-base text-[#333333]/80 leading-relaxed pt-4" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                             {faq.answer}
                           </AccordionContent>
                         </AccordionItem>
@@ -143,7 +143,7 @@ export default function FAQsPage() {
               </motion.div>
             ) : (
               <div className="text-center py-20">
-                <p className="font-paragraph text-lg text-[#333333]/60">
+                <p className="font-paragraph text-lg text-[#333333]/60" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                   No FAQs available in this category
                 </p>
               </div>
@@ -161,10 +161,10 @@ export default function FAQsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#FFFFFF] mb-6">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#FFFFFF] mb-6" style={{ fontFamily: 'cormorantgaramond', fontSize: '2.25rem', lineHeight: '2.25', letterSpacing: '0.005em', fontWeight: 600 }}>
               Still Have Questions?
             </h2>
-            <p className="font-paragraph text-lg text-[#FFFFFF]/90 mb-10">
+            <p className="font-paragraph text-lg text-[#FFFFFF]/90 mb-10" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
               Our team is here to help. Get in touch with us for personalized assistance.
             </p>
             <a href="/contact">

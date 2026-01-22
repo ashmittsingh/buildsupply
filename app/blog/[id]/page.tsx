@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -60,10 +61,10 @@ export default function BlogDetailPage() {
             </div>
           ) : !blog ? (
             <div className="text-center py-20">
-              <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
+              <h2 className="font-heading text-3xl font-bold text-foreground mb-4" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.875rem', lineHeight: '2', letterSpacing: '0.005em', fontWeight: 700 }}>
                 Article Not Found
               </h2>
-              <p className="font-paragraph text-base text-foreground/60 mb-8">
+              <p className="font-paragraph text-base text-foreground/60 mb-8" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                 The article you're looking for doesn't exist.
               </p>
               <Link to="/blogs">
@@ -83,13 +84,13 @@ export default function BlogDetailPage() {
               <header className="mb-12">
                 {blog.category && (
                   <div className="inline-block px-4 py-2 bg-white border border-light-grey rounded-sm mb-6">
-                    <span className="font-paragraph text-sm text-accent-gold font-medium">
+                    <span className="font-paragraph text-sm text-accent-gold font-medium" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 500 }}>
                       {blog.category}
                     </span>
                   </div>
                 )}
                 
-                <h1 className="font-heading text-5xl lg:text-7xl font-bold text-foreground mb-8">
+                <h1 className="font-heading text-5xl lg:text-7xl font-bold text-foreground mb-8" style={{ fontFamily: 'cormorantgaramond', fontSize: '3rem', lineHeight: '1.1', letterSpacing: '0.001em', fontWeight: 700 }}>
                   {blog.title}
                 </h1>
                 
@@ -97,7 +98,7 @@ export default function BlogDetailPage() {
                   {blog.publishDate && (
                     <div className="flex items-center gap-2">
                       <Calendar className="h-5 w-5" strokeWidth={1.5} />
-                      <span className="font-paragraph text-base">
+                      <span className="font-paragraph text-base" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                         {formatDate(blog.publishDate)}
                       </span>
                     </div>
@@ -105,7 +106,7 @@ export default function BlogDetailPage() {
                   {blog.author && (
                     <div className="flex items-center gap-2">
                       <User className="h-5 w-5" strokeWidth={1.5} />
-                      <span className="font-paragraph text-base">
+                      <span className="font-paragraph text-base" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                         {blog.author}
                       </span>
                     </div>
@@ -127,7 +128,7 @@ export default function BlogDetailPage() {
 
               {/* Article Content */}
               <div className="prose prose-lg max-w-none">
-                <div className="font-paragraph text-lg text-foreground/80 leading-relaxed whitespace-pre-line">
+                <div className="font-paragraph text-lg text-foreground/80 leading-relaxed whitespace-pre-line" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                   {blog.content}
                 </div>
               </div>

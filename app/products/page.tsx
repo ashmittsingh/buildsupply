@@ -1,3 +1,4 @@
+
 "use client";
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -8,9 +9,11 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { mockProducts } from '@/entities/mockData';
+import { Suspense } from 'react';
 
 
-export default function ProductsPage() {
+
+function ProductsPageInner() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const categories = [
@@ -42,7 +45,6 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-[#F8F8F8]">
       <Header />
-
       {/* Hero Section */}
       <section className="w-full max-w-400 mx-auto px-8 lg:px-16 pt-32 pb-16 lg:pt-40 lg:pb-24">
         <motion.div
@@ -53,19 +55,18 @@ export default function ProductsPage() {
         >
           <h1
             className="font-heading text-6xl lg:text-8xl font-bold text-[#333333] mb-8"
-            style={{ fontFamily: 'cormorantgaramond', fontWeight: 700, letterSpacing: 0, lineHeight: '1.1' }}
+            style={{ fontFamily: 'cormorantgaramond', fontSize: '3.75rem', lineHeight: '1.1', letterSpacing: '0.001em', fontWeight: 700 }}
           >
             Our Products
           </h1>
           <p
             className="font-paragraph text-lg lg:text-xl text-[#333333]/80 leading-relaxed"
-            style={{ fontFamily: 'sora', fontWeight: 400, letterSpacing: '0.01em', lineHeight: '1.75' }}
+            style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.75', letterSpacing: '0.01em', fontWeight: 400 }}
           >
             Comprehensive range of premium construction materials engineered for excellence
           </p>
         </motion.div>
       </section>
-
       {/* Filter Section */}
       <section className="w-full bg-[#FFFFFF] py-8 border-y border-[#E0E0E0] sticky top-22 z-40">
         <div className="max-w-400 mx-auto px-8 lg:px-16">
@@ -73,7 +74,7 @@ export default function ProductsPage() {
             <Filter className="h-5 w-5 text-[#333333]" />
             <span
               className="font-paragraph text-base text-[#333333] font-medium"
-              style={{ fontFamily: 'sora', fontWeight: 500, letterSpacing: '0.01em', lineHeight: '1.5' }}
+              style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.01em', fontWeight: 500 }}
             >
               Filter by Category:
             </span>
@@ -89,7 +90,7 @@ export default function ProductsPage() {
                     ? 'bg-[#2C3E50] text-[#FFFFFF] hover:bg-[#2C3E50]/90'
                     : 'border-2 border-[#333333] text-[#33333353] hover:bg-[#333333] hover:text-[#FFFFFF]'
                 }`}
-                style={{ fontFamily: 'sora', fontWeight: 400, letterSpacing: '0.02em', lineHeight: '1.375', fontSize: '0.875rem' }}
+                style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400 }}
               >
                 {category}
               </Button>
@@ -97,7 +98,6 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
-
       {/* Products Grid */}
       <section className="w-full py-16 lg:py-24">
         <div className="max-w-400 mx-auto px-8 lg:px-16">
@@ -131,20 +131,20 @@ export default function ProductsPage() {
                           <div className="inline-block px-3 py-1 bg-[#F8F8F8] rounded-sm mb-4">
                             <span
                               className="font-paragraph text-xs text-[#B8A06A] font-medium"
-                              style={{ fontFamily: 'sora', fontWeight: 500, letterSpacing: '0.02em', lineHeight: '1.25', fontSize: '0.75rem' }}
+                              style={{ fontFamily: 'sora', fontSize: '0.75rem', lineHeight: '1.25', letterSpacing: '0.02em', fontWeight: 500 }}
                             >
                               {product.category}
                             </span>
                           </div>
                           <h3
                             className="font-heading text-2xl font-semibold text-[#333333] mb-3 group-hover:text-[#B8A06A] transition-colors duration-300"
-                            style={{ fontFamily: 'cormorantgaramond', fontWeight: 600, letterSpacing: '0.01em', lineHeight: '1.875', fontSize: '1.5rem' }}
+                            style={{ fontFamily: 'cormorantgaramond', fontSize: '1.5rem', lineHeight: '1.875', letterSpacing: '0.01em', fontWeight: 600 }}
                           >
                             {product.productName}
                           </h3>
                           <p
                             className="font-paragraph text-sm text-[#333333]/70 leading-relaxed line-clamp-3"
-                            style={{ fontFamily: 'sora', fontWeight: 400, letterSpacing: '0.02em', lineHeight: '1.375', fontSize: '0.875rem', color: '#333333b3' }}
+                            style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400, color: '#333333b3' }}
                           >
                             {product.description}
                           </p>
@@ -158,7 +158,7 @@ export default function ProductsPage() {
               <div className="text-center py-20">
                 <p
                   className="font-paragraph text-lg text-[#333333]/60"
-                  style={{ fontFamily: 'sora', fontWeight: 400, letterSpacing: '0.01em', lineHeight: '1.75', fontSize: '1.25rem', color: '#33333399' }}
+                  style={{ fontFamily: 'sora', fontSize: '1.25rem', lineHeight: '1.75', letterSpacing: '0.01em', fontWeight: 400, color: '#33333399' }}
                 >
                   No products found in this category
                 </p>
@@ -167,8 +167,15 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProductsPageInner />
+    </Suspense>
   );
 }

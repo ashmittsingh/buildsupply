@@ -57,13 +57,13 @@ export default function ProductDetailPage() {
             <div className="text-center py-20">
               <h2
                 className="font-heading text-3xl font-bold mb-4"
-                style={{ fontFamily: 'cormorantgaramond', fontWeight: 700, color: '#E74C3C' }}
+                style={{ fontFamily: 'cormorantgaramond', fontSize: '1.875rem', lineHeight: '2', letterSpacing: '0.005em', fontWeight: 700, color: '#E74C3C' }}
               >
                 Product Not Found
               </h2>
               <p
                 className="font-paragraph text-base mb-8"
-                style={{ fontFamily: 'sora', color: '#33333399' }}
+                style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400, color: '#33333399' }}
               >
                 The product you're looking for doesn't exist.
               </p>
@@ -104,14 +104,14 @@ export default function ProductDetailPage() {
 
                   <h1
                     className="font-heading text-5xl lg:text-6xl font-bold mb-6"
-                    style={{ fontFamily: 'cormorantgaramond', fontWeight: 700, color: '#2C3E50' }}
+                    style={{ fontFamily: 'cormorantgaramond', fontSize: '3rem', lineHeight: '1.1', letterSpacing: '0.002em', fontWeight: 700, color: '#2C3E50' }}
                   >
                     {product.productName}
                   </h1>
 
                   <p
                     className="font-paragraph text-lg leading-relaxed mb-10"
-                    style={{ fontFamily: 'sora', color: '#333333', fontWeight: 400 }}
+                    style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400, color: '#333333' }}
                   >
                     {product.description}
                   </p>
@@ -120,7 +120,7 @@ export default function ProductDetailPage() {
                   <div className="bg-background border border-light-grey rounded-sm p-8 mb-10">
                     <h3
                       className="font-heading text-2xl font-semibold mb-6"
-                      style={{ fontFamily: 'cormorantgaramond', fontWeight: 600, color: '#2C3E50' }}
+                      style={{ fontFamily: 'cormorantgaramond', fontSize: '1.5rem', lineHeight: '1.875', letterSpacing: '0.01em', fontWeight: 600, color: '#2C3E50' }}
                     >
                       Technical Specifications
                     </h3>
@@ -131,13 +131,13 @@ export default function ProductDetailPage() {
                           <div>
                             <p
                               className="font-paragraph text-sm mb-1"
-                              style={{ color: '#33333399', fontFamily: 'sora' }}
+                              style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400, color: '#33333399' }}
                             >
                               Coverage Rate
                             </p>
                             <p
                               className="font-paragraph text-base font-medium"
-                              style={{ color: '#333333', fontFamily: 'sora' }}
+                              style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 500, color: '#333333' }}
                             >
                               {product.coverageRate} m²/kg
                             </p>
@@ -150,13 +150,13 @@ export default function ProductDetailPage() {
                           <div>
                             <p
                               className="font-paragraph text-sm mb-1"
-                              style={{ color: '#33333399', fontFamily: 'sora' }}
+                              style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400, color: '#33333399' }}
                             >
                               Wastage Factor
                             </p>
                             <p
                               className="font-paragraph text-base font-medium"
-                              style={{ color: '#333333', fontFamily: 'sora' }}
+                              style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 500, color: '#333333' }}
                             >
                               {product.wastagePercentage}%
                             </p>
@@ -184,13 +184,13 @@ export default function ProductDetailPage() {
                 <div className="bg-background border border-light-grey rounded-sm p-10 lg:p-12">
                   <h2
                     className="font-heading text-3xl font-bold mb-6"
-                    style={{ fontFamily: 'cormorantgaramond', fontWeight: 700, color: '#2C3E50' }}
+                    style={{ fontFamily: 'cormorantgaramond', fontSize: '1.875rem', lineHeight: '2', letterSpacing: '0.005em', fontWeight: 700, color: '#2C3E50' }}
                   >
                     Detailed Specifications
                   </h2>
                   <div
                     className="font-paragraph text-base leading-relaxed whitespace-pre-line"
-                    style={{ color: '#333333', fontFamily: 'sora' }}
+                    style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400, color: '#333333' }}
                   >
                     {product.specifications}
                   </div>

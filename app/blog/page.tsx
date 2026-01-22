@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -62,10 +63,10 @@ export default function BlogsPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="font-heading text-6xl lg:text-8xl font-bold text-[#333333] mb-8">
+          <h1 className="font-heading text-6xl lg:text-8xl font-bold text-[#333333] mb-8" style={{ fontFamily: 'cormorantgaramond', fontSize: '3.75rem', lineHeight: '1.1', letterSpacing: '0.001em', fontWeight: 700 }}>
             Industry Insights
           </h1>
-          <p className="font-paragraph text-lg lg:text-xl text-[#333333]/80 leading-relaxed">
+          <p className="font-paragraph text-lg lg:text-xl text-[#333333]/80 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
             Expert guidance, technical tips, and construction industry updates
           </p>
         </motion.div>
@@ -121,18 +122,18 @@ export default function BlogsPage() {
                             </div>
                             {blog.category && (
                               <div className="inline-block px-3 py-1 bg-[#F8F8F8] rounded-sm mb-4 self-start">
-                                <span className="font-paragraph text-xs text-[#B8A06A] font-medium">
+                                <span className="font-paragraph text-xs text-[#B8A06A] font-medium" style={{ fontFamily: 'sora', fontSize: '0.75rem', lineHeight: '1.25', letterSpacing: '0.02em', fontWeight: 500 }}>
                                   {blog.category}
                                 </span>
                               </div>
                             )}
-                            <h3 className="font-heading text-2xl font-semibold text-[#333333] mb-3 group-hover:text-[#B8A06A] transition-colors duration-300">
+                            <h3 className="font-heading text-2xl font-semibold text-[#333333] mb-3 group-hover:text-[#B8A06A] transition-colors duration-300" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.5rem', lineHeight: '2', letterSpacing: '0.005em', fontWeight: 600 }}>
                               {blog.title}
                             </h3>
-                            <p className="font-paragraph text-sm text-[#333333]/70 leading-relaxed line-clamp-3 mb-6 flex-1">
+                            <p className="font-paragraph text-sm text-[#333333]/70 leading-relaxed line-clamp-3 mb-6 flex-1" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400 }}>
                               {blog.content}
                             </p>
-                            <span className="inline-flex items-center font-paragraph text-sm text-[#B8A06A] group-hover:gap-2 transition-all duration-300">
+                            <span className="inline-flex items-center font-paragraph text-sm text-[#B8A06A] group-hover:gap-2 transition-all duration-300" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400 }}>
                               Read More
                               <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                             </span>
@@ -157,7 +158,7 @@ export default function BlogsPage() {
               </>
             ) : (
               <div className="text-center py-20">
-                <p className="font-paragraph text-lg text-[#333333]/60">
+                <p className="font-paragraph text-lg text-[#333333]/60" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                   No blog posts available yet
                 </p>
               </div>

@@ -46,10 +46,10 @@ export default function AboutPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="font-heading text-6xl lg:text-8xl font-bold text-[#333333] mb-8">
+          <h1 className="font-heading text-6xl lg:text-8xl font-bold text-[#333333] mb-8" style={{ fontFamily: 'cormorantgaramond', fontSize: '3.75rem', lineHeight: '1.1', letterSpacing: '0.001em', fontWeight: 700 }}>
             About BuildPro
           </h1>
-          <p className="font-paragraph text-lg lg:text-xl text-[#333333]/80 leading-relaxed">
+          <p className="font-paragraph text-lg lg:text-xl text-[#333333]/80 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
             For over three decades, we've been at the forefront of construction materials innovation, 
             delivering premium solutions that professionals trust for their most demanding projects.
           </p>
@@ -66,18 +66,18 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-heading text-5xl lg:text-6xl font-bold text-[#333333] mb-8">
+              <h2 className="font-heading text-5xl lg:text-6xl font-bold text-[#333333] mb-8" style={{ fontFamily: 'cormorantgaramond', fontSize: '3rem', lineHeight: '1.1', letterSpacing: '0.001em', fontWeight: 700 }}>
                 Our Story
               </h2>
-              <p className="font-paragraph text-lg text-[#333333]/80 mb-6 leading-relaxed">
+              <p className="font-paragraph text-lg text-[#333333]/80 mb-6 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                 Founded in 1990, BuildPro emerged from a simple vision: to provide construction 
                 professionals with materials that combine exceptional performance with unwavering reliability.
               </p>
-              <p className="font-paragraph text-lg text-[#333333]/80 mb-6 leading-relaxed">
+              <p className="font-paragraph text-lg text-[#333333]/80 mb-6 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                 What began as a small manufacturing facility has grown into a leading supplier of 
                 premium construction materials, serving thousands of projects across the region.
               </p>
-              <p className="font-paragraph text-lg text-[#333333]/80 leading-relaxed">
+              <p className="font-paragraph text-lg text-[#333333]/80 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                 Today, we continue to innovate, investing in research and development to create 
                 solutions that meet the evolving needs of modern construction while maintaining 
                 our commitment to quality and sustainability.
@@ -115,10 +115,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-heading text-5xl lg:text-6xl font-bold text-[#333333] mb-6">
+            <h2 className="font-heading text-5xl lg:text-6xl font-bold text-[#333333] mb-6" style={{ fontFamily: 'cormorantgaramond', fontSize: '3rem', lineHeight: '1.1', letterSpacing: '0.001em', fontWeight: 700 }}>
               Our Values
             </h2>
-            <p className="font-paragraph text-lg text-[#333333]/70 max-w-3xl mx-auto">
+            <p className="font-paragraph text-lg text-[#333333]/70 max-w-3xl mx-auto" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
               The principles that guide everything we do
             </p>
           </motion.div>
@@ -134,10 +134,10 @@ export default function AboutPage() {
                 className="bg-[#FFFFFF] p-10 rounded-sm border border-[#E0E0E0] text-center"
               >
                 <value.icon className="w-12 h-12 text-[#B8A06A] mx-auto mb-6" strokeWidth={1.5} />
-                <h3 className="font-heading text-2xl font-semibold text-[#333333] mb-4">
+                <h3 className="font-heading text-2xl font-semibold text-[#333333] mb-4" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.5rem', lineHeight: '2', letterSpacing: '0.005em', fontWeight: 600 }}>
                   {value.title}
                 </h3>
-                <p className="font-paragraph text-base text-[#333333]/70 leading-relaxed">
+                <p className="font-paragraph text-base text-[#333333]/70 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                   {value.description}
                 </p>
               </motion.div>
@@ -156,10 +156,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-heading text-5xl lg:text-6xl font-bold text-[#333333] mb-6">
+            <h2 className="font-heading text-5xl lg:text-6xl font-bold text-[#333333] mb-6" style={{ fontFamily: 'cormorantgaramond', fontSize: '3rem', lineHeight: '1.1', letterSpacing: '0.001em', fontWeight: 700 }}>
               Our Team
             </h2>
-            <p className="font-paragraph text-lg text-[#333333]/70 max-w-3xl mx-auto">
+            <p className="font-paragraph text-lg text-[#333333]/70 max-w-3xl mx-auto" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
               Meet the experts behind BuildPro's success
             </p>
           </motion.div>
@@ -178,20 +178,20 @@ export default function AboutPage() {
                   >
                     <div className="aspect-square rounded-sm overflow-hidden mb-6">
                       <Image
-                        src={member.photo || "/images/TeamMember.png"}
-                        alt="Team member"
+                        src={member.photo || "/images/default-profile.png"}
+                        alt={member.name || "Team member"}
                         className="w-full h-full object-cover"
                         width={400}
                         height={400}
                       />
                     </div>
-                    <h3 className="font-heading text-2xl font-semibold text-[#333333] mb-2">
+                    <h3 className="font-heading text-2xl font-semibold text-[#333333] mb-2" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.5rem', lineHeight: '2', letterSpacing: '0.005em', fontWeight: 600 }}>
                       {member.name}
                     </h3>
-                    <p className="font-paragraph text-base text-[#B8A06A] mb-4">
+                    <p className="font-paragraph text-base text-[#B8A06A] mb-4" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                       {member.role}
                     </p>
-                    <p className="font-paragraph text-sm text-[#333333]/70 leading-relaxed">
+                    <p className="font-paragraph text-sm text-[#333333]/70 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400 }}>
                       {member.bio}
                     </p>
                   </motion.div>
@@ -199,7 +199,7 @@ export default function AboutPage() {
               </div>
             ) : (
               <div className="text-center py-20">
-                <p className="font-paragraph text-lg text-[#333333]/60">
+                <p className="font-paragraph text-lg text-[#333333]/60" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                   Team information coming soon
                 </p>
               </div>

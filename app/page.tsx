@@ -49,13 +49,13 @@ const FEATURES = [
 
 const SectionDivider = () => (
   <div className="w-full flex justify-center items-center py-12 opacity-20">
-    <div className="h-px w-full max-w-480 bg-foreground/30" />
+    <div className="h-px w-full max-w-480 bg-[#333333]/30" />
   </div>
 );
 
 const Marquee = () => {
   return (
-    <div className="w-full bg-dark-grey text-white py-6 overflow-hidden flex whitespace-nowrap border-y border-white/10">
+    <div className="w-full bg-[#333333] text-[#FFFFFF] py-6 overflow-hidden flex whitespace-nowrap border-y border-[#FFFFFF]/10">
       <motion.div 
         className="flex gap-16 items-center"
         animate={{ x: "-50%" }}
@@ -63,11 +63,11 @@ const Marquee = () => {
       >
         {[...Array(4)].map((_, i) => (
           <React.Fragment key={i}>
-            <span className="text-sm font-paragraph tracking-[0.2em] uppercase opacity-80">Precision Engineering</span>
+            <span className="text-sm font-paragraph tracking-[0.2em] uppercase opacity-80" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.2em', fontWeight: 400 }}>Precision Engineering</span>
             <span className="w-1 h-1 bg-accent-gold rounded-full" />
-            <span className="text-sm font-paragraph tracking-[0.2em] uppercase opacity-80">Industrial Durability</span>
+            <span className="text-sm font-paragraph tracking-[0.2em] uppercase opacity-80" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.2em', fontWeight: 400 }}>Industrial Durability</span>
             <span className="w-1 h-1 bg-accent-gold rounded-full" />
-            <span className="text-sm font-paragraph tracking-[0.2em] uppercase opacity-80">Global Standards</span>
+            <span className="text-sm font-paragraph tracking-[0.2em] uppercase opacity-80" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.2em', fontWeight: 400 }}>Global Standards</span>
             <span className="w-1 h-1 bg-accent-gold rounded-full" />
           </React.Fragment>
         ))}
@@ -92,7 +92,7 @@ export default function HomePage() {
   const yHero = useTransform(heroScroll, [0, 1], ["0%", "30%"]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-background overflow-clip selection:bg-accent-gold selection:text-white">
+    <div ref={containerRef} className="min-h-screen bg-[#F8F8F8] overflow-clip selection:bg-[#B8A06A] selection:text-[#FFFFFF]">
       <Header />
       <section ref={heroRef} className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Parallax Layer */}
@@ -120,7 +120,7 @@ export default function HomePage() {
               className="mb-6 flex items-center gap-4"
             >
               <div className="h-px w-12 bg-[#B8A06A]" />
-              <span className="font-paragraph text-sm tracking-[0.2em] uppercase text-[#B8A06A] font-medium">
+              <span className="font-paragraph text-sm tracking-[0.2em] uppercase text-[#B8A06A] font-medium" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.2em', fontWeight: 500 }}>
                 Est. Quality Standards
               </span>
             </motion.div>
@@ -130,6 +130,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-[#FFFFFF] leading-[0.9] tracking-tight mb-8"
+              style={{ fontFamily: 'cormorantgaramond', fontSize: '3.75rem', lineHeight: '1.1', letterSpacing: '0.001em', fontWeight: 700 }}
             >
               Building <br />
               <span className="text-[#FFFFFF]">Excellence.</span>
@@ -140,6 +141,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="font-paragraph text-lg md:text-xl text-[#FFFFFF] max-w-2xl leading-relaxed mb-12 border-l-2 border-[#B8A06A]/30 pl-6"
+              style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}
             >
               Premium construction materials engineered for precision, durability, and uncompromising quality. We provide the foundation for the world's most ambitious structures.
             </motion.p>
@@ -154,6 +156,7 @@ export default function HomePage() {
                 <Button 
                   size="lg"
                   className="bg-[#2C3E50] hover:bg-[#2C3E50]/90 text-[#FFFFFF] font-paragraph text-base px-10 py-7 h-auto rounded-none border border-[#2C3E50] transition-all duration-300 group"
+                  style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}
                 >
                   <Calculator className="mr-3 h-5 w-5 text-[#B8A06A]" />
                   Launch Calculator
@@ -165,6 +168,7 @@ export default function HomePage() {
                   variant="outline"
                   size="lg"
                   className="bg-transparent border border-[#333333]/20 text-[#FFFFFF] hover:bg-[#333333] hover:text-[#FFFFFF] font-paragraph text-base px-10 py-7 h-auto rounded-none transition-all duration-300"
+                  style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}
                 >
                   Explore Collection
                 </Button>
@@ -175,30 +179,30 @@ export default function HomePage() {
           {/* Hero Decorative Element */}
           <div className="hidden lg:block lg:col-span-4 relative h-full min-h-150">
              <motion.div 
-               className="absolute top-20 right-0 w-full aspect-3/4 border border-foreground/10 p-4"
+               className="absolute top-20 right-0 w-full aspect-3/4 border border-[#333333]/10 p-4"
              >
                 <div className="w-full h-full relative overflow-hidden bg-white backdrop-blur-sm">
                   <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-accent-gold to-transparent opacity-50" />
                   <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-accent-gold to-transparent opacity-50" />
                   <div className="p-8 flex flex-col justify-between h-full">
                     <div className="space-y-2">
-                      <div className="w-8 h-8 border border-foreground/20 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 border border-[#333333]/20 rounded-full flex items-center justify-center">
                         <div className="w-1 h-1 bg-accent-gold rounded-full" />
                       </div>
-                      <p className="font-heading text-2xl text-black">Precision</p>
+                      <p className="font-heading text-2xl text-black" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.5rem', lineHeight: '1.875', letterSpacing: '0.01em', fontWeight: 500 }}>Precision</p>
                     </div>
                     <div className="space-y-6">
                       <div className="flex justify-between items-end border-b border-black pb-2">
-                        <span className="font-paragraph text-xs uppercase tracking-wider text-black">Coverage</span>
-                        <span className="font-paragraph text-lg text-black">100%</span>
+                        <span className="font-paragraph text-xs uppercase tracking-wider text-black" style={{ fontFamily: 'sora', fontSize: '0.75rem', lineHeight: '1.25', letterSpacing: '0.02em', fontWeight: 400 }}>Coverage</span>
+                        <span className="font-paragraph text-lg text-black" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>100%</span>
                       </div>
                       <div className="flex justify-between items-end border-b border-white/10 pb-2">
-                        <span className="font-paragraph text-xs uppercase tracking-wider text-black">Durability</span>
-                        <span className="font-paragraph text-lg text-black">A+</span>
+                        <span className="font-paragraph text-xs uppercase tracking-wider text-black" style={{ fontFamily: 'sora', fontSize: '0.75rem', lineHeight: '1.25', letterSpacing: '0.02em', fontWeight: 400 }}>Durability</span>
+                        <span className="font-paragraph text-lg text-black" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>A+</span>
                       </div>
                       <div className="flex justify-between items-end border-b border-white/10 pb-2">
-                        <span className="font-paragraph text-xs uppercase tracking-wider text-black">Grade</span>
-                        <span className="font-paragraph text-lg text-black">Industrial</span>
+                        <span className="font-paragraph text-xs uppercase tracking-wider text-black" style={{ fontFamily: 'sora', fontSize: '0.75rem', lineHeight: '1.25', letterSpacing: '0.02em', fontWeight: 400 }}>Grade</span>
+                        <span className="font-paragraph text-lg text-black" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>Industrial</span>
                       </div>
                     </div>
                   </div>
@@ -211,24 +215,24 @@ export default function HomePage() {
         <motion.div 
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
         >
-          <span className="font-paragraph text-xs uppercase tracking-[0.3em] text-foreground/40">Scroll</span>
-          <div className="w-px h-16 bg-linear-to-b from-foreground/40 to-transparent" />
+          <span className="font-paragraph text-xs uppercase tracking-[0.3em] text-[#333333]/40">Scroll</span>
+          <div className="w-px h-16 bg-linear-to-b from-[#333333]/40 to-transparent" />
         </motion.div>
       </section>
 
       <Marquee />
 
       {/* --- PHILOSOPHY SECTION --- */}
-      <section className="w-full py-32 bg-background relative">
+      <section className="w-full py-32 bg-[#F8F8F8] relative">
         <div className="max-w-480 mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4 relative">
               <div className="sticky top-32">
-                <h2 className="font-heading text-4xl lg:text-5xl text-[#333333] mb-6">
+                <h2 className="font-heading text-4xl lg:text-5xl text-[#333333] mb-6" style={{ fontFamily: 'cormorantgaramond', fontSize: '2.25rem', lineHeight: '2.25', letterSpacing: '0.005em', fontWeight: 600 }}>
                   The Architecture <br /> of Quality
                 </h2>
                 <div className="w-12 h-1 bg-[#B8A06A] mb-8" />
-                <p className="font-paragraph text-[#333333]/60 leading-relaxed mb-8">
+                <p className="font-paragraph text-[#333333]/60 leading-relaxed mb-8" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                   We believe that the integrity of a structure is defined by the quality of its smallest components. Our philosophy is rooted in the relentless pursuit of material perfection.
                 </p>
                 <Link href="/about">
@@ -251,14 +255,14 @@ export default function HomePage() {
               </div>
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
-                  <h3 className="font-heading text-2xl text-[#333333] mb-4">Innovation First</h3>
-                  <p className="font-paragraph text-[#333333]/60 leading-relaxed">
+                  <h3 className="font-heading text-2xl text-[#333333] mb-4" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.5rem', lineHeight: '1.875', letterSpacing: '0.01em', fontWeight: 500 }}>Innovation First</h3>
+                  <p className="font-paragraph text-[#333333]/60 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                     Our labs are constantly pushing the boundaries of chemical engineering to create adhesives and coatings that defy traditional limitations.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl text-[#333333] mb-4">Sustainable Future</h3>
-                  <p className="font-paragraph text-[#333333]/60 leading-relaxed">
+                  <h3 className="font-heading text-2xl text-[#333333] mb-4" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.5rem', lineHeight: '1.875', letterSpacing: '0.01em', fontWeight: 500 }}>Sustainable Future</h3>
+                  <p className="font-paragraph text-[#333333]/60 leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                     We are committed to reducing the carbon footprint of construction through eco-friendly manufacturing processes and durable materials.
                   </p>
                 </div>
@@ -274,8 +278,8 @@ export default function HomePage() {
       <section className="w-full py-32 bg-[#F8F8F8]">
         <div className="max-w-480 mx-auto px-6 lg:px-12 mb-20 flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
-            <span className="font-paragraph text-sm tracking-[0.2em] uppercase text-[#B8A06A] mb-4 block">Our Collection</span>
-            <h2 className="font-heading text-5xl lg:text-6xl text-[#333333]">Material Solutions</h2>
+            <span className="font-paragraph text-sm tracking-[0.2em] uppercase text-[#B8A06A] mb-4 block" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.2em', fontWeight: 400 }}>Our Collection</span>
+            <h2 className="font-heading text-5xl lg:text-6xl text-[#333333]" style={{ fontFamily: 'cormorantgaramond', fontSize: '3rem', lineHeight: '1.1', letterSpacing: '0.002em', fontWeight: 700 }}>Material Solutions</h2>
           </div>
           <Link href="/products">
             <Button variant="outline" className="rounded-none border-[#333333]/20 hover:bg-[#333333] hover:text-[#FFFFFF] transition-all duration-300">
@@ -306,17 +310,17 @@ export default function HomePage() {
                     <div className="w-12 h-12 mb-8 text-[#B8A06A]">
                       <category.icon strokeWidth={1} className="w-full h-full" />
                     </div>
-                    <h3 className="font-heading text-3xl font-medium mb-4 group-hover:translate-x-2 transition-transform duration-500">
+                    <h3 className="font-heading text-3xl font-medium mb-4 group-hover:translate-x-2 transition-transform duration-500" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.875rem', lineHeight: '2', letterSpacing: '0.005em', fontWeight: 600 }}>
                       {category.title}
                     </h3>
                     <div className="w-12 h-px bg-[#333333]/20 group-hover:bg-[#B8A06A] mb-6 transition-colors duration-300" />
-                    <p className="font-paragraph text-[#333333]/60 group-hover:text-[#FFFFFF]/80 leading-relaxed max-w-xs transition-colors duration-300">
+                    <p className="font-paragraph text-[#333333]/60 group-hover:text-[#FFFFFF]/80 leading-relaxed max-w-xs transition-colors duration-300" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                       {category.description}
                     </p>
                   </div>
                   
                   <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                    <span className="font-paragraph text-sm uppercase tracking-widest">Explore</span>
+                    <span className="font-paragraph text-sm uppercase tracking-widest" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400 }}>Explore</span>
                     <ArrowRight className="w-5 h-5 text-[#B8A06A]" />
                   </div>
                 </div>
@@ -349,12 +353,12 @@ export default function HomePage() {
                   <span className="font-paragraph text-sm tracking-[0.2em] uppercase text-[#B8A06A]">Precision Tool</span>
                 </div>
                 
-                <h2 className="font-heading text-5xl lg:text-7xl font-bold mb-8 leading-none">
+                <h2 className="font-heading text-5xl lg:text-7xl font-bold mb-8 leading-none" style={{ fontFamily: 'cormorantgaramond', fontSize: '3rem', lineHeight: '1.1', letterSpacing: '0.002em', fontWeight: 700 }}>
                   Calculate with <br />
                   <span className="text-[#B8A06A]">Confidence.</span>
                 </h2>
                 
-                <p className="font-paragraph text-lg text-[#FFFFFF]/70 mb-12 max-w-xl leading-relaxed">
+                <p className="font-paragraph text-lg text-[#FFFFFF]/70 mb-12 max-w-xl leading-relaxed" style={{ fontFamily: 'sora', fontSize: '1.125rem', lineHeight: '1.625', letterSpacing: '0.01em', fontWeight: 400 }}>
                   Eliminate guesswork from your projects. Our advanced formula-based calculator provides exact material requirements, coverage rates, and wastage estimates instantly.
                 </p>
 
@@ -376,8 +380,8 @@ export default function HomePage() {
                         <div className="w-2 h-2 bg-[#B8A06A] rounded-full" />
                       </div>
                       <div>
-                        <h4 className="font-heading text-xl text-[#FFFFFF] mb-1">{item.title}</h4>
-                        <p className="font-paragraph text-sm text-[#FFFFFF]/50">{item.desc}</p>
+                        <h4 className="font-heading text-xl text-[#FFFFFF] mb-1" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.25rem', lineHeight: '1.75', letterSpacing: '0.01em', fontWeight: 500 }}>{item.title}</h4>
+                        <p className="font-paragraph text-sm text-[#FFFFFF]/50" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400 }}>{item.desc}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -474,8 +478,8 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-12 gap-12">
             {/* Header Column */}
             <div className="lg:col-span-4 pr-8">
-              <h2 className="font-heading text-5xl text-[#333333] mb-8">The Standard of Industry</h2>
-              <p className="font-paragraph text-[#333333]/60 leading-relaxed mb-12">
+              <h2 className="font-heading text-5xl text-[#333333] mb-8" style={{ fontFamily: 'cormorantgaramond', fontSize: '3rem', lineHeight: '1.1', letterSpacing: '0.002em', fontWeight: 700 }}>The Standard of Industry</h2>
+              <p className="font-paragraph text-[#333333]/60 leading-relaxed mb-12" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                 We don't just supply materials; we provide the assurance that your project will stand the test of time.
               </p>
               <Link href="/about">
@@ -495,8 +499,8 @@ export default function HomePage() {
                   <div className="w-10 h-10 rounded-full bg-[#E0E0E0]/30 flex items-center justify-center mb-6 group-hover:bg-[#B8A06A]/20 transition-colors duration-300">
                     <CheckCircle2 className="w-5 h-5 text-[#333333] group-hover:text-[#B8A06A] transition-colors duration-300" />
                   </div>
-                  <h3 className="font-heading text-2xl text-[#333333] mb-3">{feature}</h3>
-                  <p className="font-paragraph text-sm text-[#333333]/50">
+                  <h3 className="font-heading text-2xl text-[#333333] mb-3" style={{ fontFamily: 'cormorantgaramond', fontSize: '1.5rem', lineHeight: '1.875', letterSpacing: '0.01em', fontWeight: 500 }}>{feature}</h3>
+                  <p className="font-paragraph text-sm text-[#333333]/50" style={{ fontFamily: 'sora', fontSize: '0.875rem', lineHeight: '1.375', letterSpacing: '0.02em', fontWeight: 400 }}>
                     Rigorous testing and quality control ensure consistent performance across every batch.
                   </p>
                 </div>
@@ -509,7 +513,7 @@ export default function HomePage() {
       {/* --- FINAL CTA --- */}
       <section className="w-full py-24 bg-[#F8F8F8] border-t border-[#333333]/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#333333] mb-8">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#333333] mb-8" style={{ fontFamily: 'cormorantgaramond', fontSize: '2.25rem', lineHeight: '2.25', letterSpacing: '0.005em', fontWeight: 600 }}>
             Ready to build with precision?
           </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
