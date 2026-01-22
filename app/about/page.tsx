@@ -1,17 +1,6 @@
-import { Metadata } from "next";
-import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Card from "@/components/Card";
-
-export const metadata: Metadata = {
-  title: "About Us | BuildSupply",
-  description: "Learn about BuildSupply's mission, values, and commitment to providing premium construction materials.",
-  openGraph: {
-    title: "About Us | BuildSupply",
-    description: "Learn about BuildSupply's mission, values, and commitment to providing premium construction materials.",
-  },
-};
 
 export default function About() {
   return (
