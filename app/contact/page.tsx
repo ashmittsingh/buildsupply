@@ -9,8 +9,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BaseCrudService } from '@/integrations';
 import { ContactInquiries } from '@/entities';
+import { mockContactInquiries } from '@/entities/mockData';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -39,10 +39,11 @@ export default function ContactPage() {
       email: formData.email,
       phone: formData.phone,
       message: formData.message,
-      submissionDate: new Date()
+      submissionDate: new Date().toISOString()
     };
 
-    await BaseCrudService.create('contactinquiries', inquiry);
+    // Simulate saving to mock data (in-memory only)
+    mockContactInquiries.push(inquiry);
 
     setSubmitSuccess(true);
     setFormData({ name: '', email: '', phone: '', message: '' });

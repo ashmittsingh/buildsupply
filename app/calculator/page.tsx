@@ -9,8 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BaseCrudService } from '@/integrations';
 import { Products, CalculatorFormulas } from '@/entities';
+import { mockProducts, mockCalculatorFormulas } from '@/entities/mockData';
 
 export default function CalculatorPage() {
   const [products, setProducts] = useState<Products[]>([]);
@@ -28,26 +28,15 @@ export default function CalculatorPage() {
   } | null>(null);
 
   useEffect(() => {
-    loadData();
-  }, []);
-
-  const loadData = async () => {
-    const [productsResult, formulasResult] = await Promise.all([
-      BaseCrudService.getAll<Products>('products'),
-      BaseCrudService.getAll<CalculatorFormulas>('calculatorformulas')
-    ]);
-    
-    const activeProducts = productsResult.items.filter(p => p.coverageRate && p.coverageRate > 0);
+    const activeProducts = mockProducts.filter(p => p.coverageRate && p.coverageRate > 0);
     setProducts(activeProducts);
-    setFormulas(formulasResult.items.filter(f => f.isActive));
-  };
+    setFormulas(mockCalculatorFormulas.filter(f => f.isActive));
+  }, []);
 
   const calculateMaterial = () => {
     if (!selectedProduct) return;
-
     const product = products.find(p => p._id === selectedProduct);
     if (!product || !product.coverageRate) return;
-
     let area = 0;
     if (inputType === 'dimensions') {
       const l = parseFloat(length);

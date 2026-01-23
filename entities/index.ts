@@ -115,6 +115,8 @@ export interface Products {
   wastagePercentage?: number;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   productImage?: string;
+  /** @wixFieldType boolean */
+  isFeatured?: boolean;
 }
 
 

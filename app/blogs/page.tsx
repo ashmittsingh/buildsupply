@@ -1,40 +1,38 @@
 "use client";
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BaseCrudService } from '@/integrations';
 import { BlogPosts } from '@/entities';
+import { mockBlogPosts } from '@/entities/mockData';
 import { format } from 'date-fns';
 
 export default function BlogsPage() {
   const [blogs, setBlogs] = useState<BlogPosts[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [hasNext, setHasNext] = useState(false);
   const [skip, setSkip] = useState(0);
   const limit = 9;
 
   useEffect(() => {
-    loadBlogs();
-  }, [skip]);
-
-  const loadBlogs = async () => {
     setIsLoading(true);
-    const result = await BaseCrudService.getAll<BlogPosts>('blogposts', {}, { limit, skip });
-    
-    if (skip === 0) {
-      setBlogs(result.items);
-    } else {
-      setBlogs(prev => [...prev, ...result.items]);
-    }
-    
-    setHasNext(result.hasNext);
-    setIsLoading(false);
-  };
+    setTimeout(() => {
+      const start = skip;
+      const end = skip + limit;
+      const items = mockBlogPosts.slice(start, end);
+      if (skip === 0) {
+        setBlogs(items);
+      } else {
+        setBlogs(prev => [...prev, ...items]);
+      }
+      setHasNext(end < mockBlogPosts.length);
+      setIsLoading(false);
+    }, 500);
+  }, [skip]);
 
   const loadMore = () => {
     if (hasNext) {
@@ -54,7 +52,6 @@ export default function BlogsPage() {
   return (
     <div className="min-h-screen bg-[#F8F8F8]">
       <Header />
-      
       {/* Hero Section */}
       <section className="w-full max-w-400 mx-auto px-8 lg:px-16 pt-32 pb-16 lg:pt-40 lg:pb-24">
         <motion.div
@@ -91,7 +88,7 @@ export default function BlogsPage() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
-                      <Link to={`/blogs/${blog._id}`}>
+                      <Link href={`/blogs/${blog._id}`}>
                         <div className="group bg-[#FFFFFF] border border-[#E0E0E0] rounded-sm overflow-hidden hover:border-[#B8A06A] transition-all duration-500 h-full flex flex-col">
                           <div className="aspect-16/10 overflow-hidden">
                             <Image 
@@ -99,6 +96,7 @@ export default function BlogsPage() {
                               alt={blog.title || 'Blog post'}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                               width={600}
+                              height={300}
                             />
                           </div>
                           <div className="p-8 flex-1 flex flex-col">

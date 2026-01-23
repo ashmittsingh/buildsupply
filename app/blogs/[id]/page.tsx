@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, User } from 'lucide-react';
 import Image from 'next/image';
@@ -8,27 +9,27 @@ import { Spinner } from "@/components/ui/spinner"
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BaseCrudService } from '@/integrations';
+// import { BaseCrudService } from '@/integrations';
+import { mockBlogPosts } from '@/entities/mockData';
 import { BlogPosts } from '@/entities';
 import { format } from 'date-fns';
 
 export default function BlogDetailPage() {
-  const { id } = useParams<{ id: string }>();
+  const params = useParams();
+  const id = typeof params.id === 'string' ? params.id : Array.isArray(params.id) ? params.id[0] : undefined;
   const [blog, setBlog] = useState<BlogPosts | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (id) {
-      loadBlog();
+      setIsLoading(true);
+      setTimeout(() => {
+        const found = mockBlogPosts.find(b => b._id === id);
+        setBlog(found || null);
+        setIsLoading(false);
+      }, 300);
     }
   }, [id]);
-
-  const loadBlog = async () => {
-    setIsLoading(true);
-    const data = await BaseCrudService.getById<BlogPosts>('blogposts', id!);
-    setBlog(data);
-    setIsLoading(false);
-  };
 
   const formatDate = (date: Date | string | undefined) => {
     if (!date) return '';
@@ -44,7 +45,7 @@ export default function BlogDetailPage() {
       <Header />
       
       <div className="w-full max-w-400 mx-auto px-8 lg:px-16 pt-32 pb-24 lg:pt-40 lg:pb-32">
-        <Link to="/blogs">
+        <Link href="/blogs">
           <Button 
             variant="outline"
             className="mb-12 border-2 border-dark-grey text-dark-grey hover:bg-dark-grey hover:text-white font-paragraph transition-all duration-300"
@@ -67,7 +68,7 @@ export default function BlogDetailPage() {
               <p className="font-paragraph text-base text-foreground/60 mb-8" style={{ fontFamily: 'sora', fontSize: '1rem', lineHeight: '1.5', letterSpacing: '0.02em', fontWeight: 400 }}>
                 The article you're looking for doesn't exist.
               </p>
-              <Link to="/blogs">
+              <Link href="/blogs">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                   View All Articles
                 </Button>
@@ -122,6 +123,7 @@ export default function BlogDetailPage() {
                     alt={blog.title || 'Blog post cover'}
                     className="w-full h-full object-cover"
                     width={1200}
+                    height={600}
                   />
                 </div>
               )}
@@ -135,7 +137,7 @@ export default function BlogDetailPage() {
 
               {/* Article Footer */}
               <footer className="mt-16 pt-12 border-t border-light-grey">
-                <Link to="/blogs">
+                <Link href="/blogs">
                   <Button 
                     variant="outline"
                     className="border-2 border-dark-grey text-dark-grey hover:bg-dark-grey hover:text-white font-paragraph transition-all duration-300"

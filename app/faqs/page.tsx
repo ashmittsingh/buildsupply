@@ -5,29 +5,17 @@ import { HelpCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BaseCrudService } from '@/integrations';
+import { mockFAQs } from '@/entities/mockData';
 import { FAQs } from '@/entities';
 
 export default function FAQsPage() {
-  const [faqs, setFaqs] = useState<FAQs[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  useEffect(() => {
-    loadFAQs();
-  }, []);
-
-  const loadFAQs = async () => {
-    setIsLoading(true);
-    const result = await BaseCrudService.getAll<FAQs>('faqs');
-    setFaqs(result.items);
-    setIsLoading(false);
-  };
-
+  const faqs = mockFAQs;
   const categories = ['All', ...Array.from(new Set(faqs.map(f => f.category).filter(Boolean)))];
-  
-  const filteredFAQs = selectedCategory === 'All' 
-    ? faqs 
+
+  const filteredFAQs = selectedCategory === 'All'
+    ? faqs
     : faqs.filter(f => f.category === selectedCategory);
 
   const featuredFAQs = filteredFAQs.filter(f => f.isFeatured);
@@ -82,7 +70,7 @@ export default function FAQsPage() {
       <section className="w-full py-16 lg:py-24">
         <div className="max-w-4xl mx-auto px-8 lg:px-16">
           <div className="min-h-100">
-            {isLoading ? null : filteredFAQs.length > 0 ? (
+            {filteredFAQs.length > 0 ? (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

@@ -103,10 +103,13 @@ export default function ProductDetailPage() {
                   </div>
 
                   <h1
-                    className="font-heading text-5xl lg:text-6xl font-bold mb-6"
+                    className="font-heading text-5xl lg:text-6xl font-bold mb-6 flex items-center gap-4"
                     style={{ fontFamily: 'cormorantgaramond', fontSize: '3rem', lineHeight: '1.1', letterSpacing: '0.002em', fontWeight: 700, color: '#2C3E50' }}
                   >
                     {product.productName}
+                    {product.isFeatured && (
+                      <span className="ml-2 px-3 py-1 bg-[#B8A06A] text-white text-xs font-semibold rounded-full">Featured</span>
+                    )}
                   </h1>
 
                   <p

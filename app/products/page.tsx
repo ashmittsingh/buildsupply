@@ -32,7 +32,10 @@ function ProductsPageInner() {
 
   const filteredProducts = selectedCategory === 'All'
     ? mockProducts
-    : mockProducts.filter(p => p.category === selectedCategory);
+    : mockProducts.filter(p =>
+        typeof p.category === 'string' &&
+        p.category.toLowerCase().includes(selectedCategory.toLowerCase())
+      );
 
   const handleCategoryChange = (category: string) => {
     if (category === 'All') {
